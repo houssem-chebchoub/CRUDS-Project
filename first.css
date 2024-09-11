@@ -1,0 +1,16 @@
+.container{
+    display: inline-block;
+    height: 300px;
+    width: 100vw;
+    justify-content: center;
+    align-content: center;
+
+}
+.container img{
+    height: 200px;
+    width: 200px;
+}
+.main img{
+    height: 400px;
+    width: 400px;
+}
