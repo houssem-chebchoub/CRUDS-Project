@@ -3,25 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>project1</title>
+    <title>CRUDS project</title>
     <link rel="stylesheet" href="/first.css">
 </head>
 <body>
-    <div class="container">
-        <img src="/images/1.png" alt="..." onclick="main.src = this.src">
-        <img src="/images/2.png" alt="..." onclick="main.src = this.src">
-        <img src="/images/3.png" alt="..." onclick="main.src = this.src">
-        <img src="/images/4.png" alt="..." onclick="main.src = this.src">
+<div class="crud"> 
+
+<div class="head">
+<h2>CRUDS</h2>
+<p>create read update delete search</p>
+</div>
+
+
+<div class="input">
+<input type="text" placeholder="title" id="title">
+<div class="price">
+    <input type="number" placeholder="price" id="price">
+    <input type="number" placeholder="taxes" id="taxes">
+    <input type="number" placeholder="ads" id="ads">
+    <input type="number" placeholder="discount" id="discount">
+    <small id="total">123932</small>
+</div>
+
+<input type="number" placeholder="count" id="count">
+<input type="text" placeholder="category" id="category">
+<button id="submit"> create</button>
+
+
+
+</div>
+
+
+<div class="output">
+    <div class="searchblock">
+        <input type="text" placeholder="search" id="search">
+        <div class="btnsearch">
+            <button id="searchTitle">search by title</button>
+            <button id="searchCategory">search by category</button>
+        </div>
     </div>
-    <div class="main">
-        <img src="/images/1.png"  alt="..." name="main">
-    </div>
-    <div class="container"></div>
-        <img src="/images/1.png" alt="..." onmouseenter="main.src = this.src">
-        <img src="/images/2.png" alt="..." onmouseenter="main.src = this.src">
-        <img src="/images/3.png" alt="..." onmouseenter="main.src = this.src">
-        <img src="/images/4.png" alt="..." onmouseenter="main.src = this.src">
-    </div>
-    <script src="/firsr.js"></script>
+
+
+    <table>
+        <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>price</th>
+            <th>taxes</th>
+            <th>ads</th>
+            <th>discount</th>
+            <th>total</th>
+            <th>category</th>
+            <th>update</th>
+            <th>delete</th> 
+        </tr>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>sumasung</td>
+                <td>21000</td>
+                <td>300</td>
+                <td>200</td>
+                <td>300</td>
+                <td>300</td>
+                <td>phone</td>
+                <td><button id="update">update</button></td>
+                <td><button id="delete">delete</button></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>sumasung</td>
+                <td>21000</td>
+                <td>300</td>
+                <td>200</td>
+                <td>300</td>
+                <td>300</td>
+                <td>phone</td>
+                <td><button id="update">update</button></td>
+                <td><button id="delete">delete</button></td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>sumasung</td>
+                <td>21000</td>
+                <td>300</td>
+                <td>200</td>
+                <td>300</td>
+                <td>300</td>
+                <td>phone</td>
+                <td><button id="update">update</button></td>
+                <td><button id="delete">delete</button></td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>
+</div>
+   <script src="/firsr.js"></script> 
 </body>
 </html>
