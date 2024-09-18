@@ -32,17 +32,31 @@ function getTotal(){
     }
 }
 
-
-
-
-
-
-
-
-
-
-
 //create product
+let datapro;
+
+if ( localStorage.product =! null){
+    datapro = JSON.parse(localStorage.product)
+}
+
+
+
+
+submit.onclick = function(){
+product ={
+    title : title.value,
+    price : price.value,
+    taxes : taxes.value,
+    ads : ads.value,
+    discount : discount.value,
+    total : total.innerHTML,
+    category: category.value,
+    count :count.value
+};
+datapro.push(product);
+localStorage.setItem('product',JSON.stringify(datapro));
+}
+
 //save on the localstorage
 //clear inputes
 //read
