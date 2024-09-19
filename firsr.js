@@ -35,15 +35,15 @@ function getTotal(){
 //create product
 let datapro;
 
-if ( localStorage.product =! null){
+if ( localStorage.product != null){
     datapro = JSON.parse(localStorage.product)
+}else{
+    datapro = [];
 }
 
 
-
-
 submit.onclick = function(){
-product ={
+let newPro ={
     title : title.value,
     price : price.value,
     taxes : taxes.value,
@@ -52,14 +52,60 @@ product ={
     total : total.innerHTML,
     category: category.value,
     count :count.value
-};
-datapro.push(product);
-localStorage.setItem('product',JSON.stringify(datapro));
 }
+datapro.push(newPro)
+
 
 //save on the localstorage
+
+localStorage.setItem('product',JSON.stringify(datapro));
+
+clearData()
+readData()
+
+
+}
+
 //clear inputes
+function clearData(){
+    title.value = '';
+    price.value = '';
+    ads.value = '';
+    taxes.value = '';
+    discount.value = '';
+    total.innerHTML = '';
+    count.value = '';
+    category.value = '';
+
+}
+
+
 //read
+function readData(){
+    let table = '';
+    for (let i=0 ;i<datapro.length;i++){
+        table += `
+          <tr>
+                <td>${i}</td>
+                <td>${datapro[i].title}</td>
+                <td>${datapro[i].price}</td>
+                <td>${datapro[i].taxes}</td>
+                <td>${datapro[i].ads}</td>
+                <td>${datapro[i].discount}</td>
+                <td>${datapro[i].total}</td>
+                <td>${datapro[i].category}</td>
+                <td><button id="update">update</button></td>
+                <td><button id="delete">delete</button></td>
+            </tr>
+        
+        `
+    }
+    document.getElementById('tbody').innerHTML = table;
+}
+readData()
+
+
+
 //count
 //delete
 //update
