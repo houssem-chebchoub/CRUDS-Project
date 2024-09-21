@@ -53,7 +53,14 @@ let newPro ={
     category: category.value,
     count :count.value
 }
-datapro.push(newPro)
+if(newPro.count >1){
+    for(let i=0; i<newPro.count;i++){
+        datapro.push(newPro);
+
+    }
+}else{
+    datapro.push(newPro)
+}
 
 
 //save on the localstorage
@@ -95,19 +102,40 @@ function readData(){
                 <td>${datapro[i].total}</td>
                 <td>${datapro[i].category}</td>
                 <td><button id="update">update</button></td>
-                <td><button id="delete">delete</button></td>
+                <td><button id="delete" onclick="clearOneData(${i})">delete</button></td>
             </tr>
         
         `
     }
     document.getElementById('tbody').innerHTML = table;
+    let deleteall =document.getElementById('deleteA');
+
+    if(datapro.length >0){
+        deleteall.innerHTML=`
+        <button onclick="clearAll()">delete All</button>   `;
+    }
+    else{
+        deleteall.innerHTML="";
+    }
 }
 readData()
 
 
-
 //count
 //delete
+function clearOneData(i){
+    datapro.splice(i,1);
+    localStorage.product = JSON.stringify(datapro);
+    readData()
+}
+
+function clearAll(){
+    localStorage.clear();
+    datapro.splice(0);
+    readData();
+
+}
+
 //update
 //search
 //clean data

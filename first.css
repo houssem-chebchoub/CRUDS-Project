@@ -81,6 +81,10 @@ button:hover{
 .btnsearch button{
     width: 45%;
 }
+#deleteA{
+    margin: 20px 20px;
+}
+
 table{
     width: 100%;
     text-align: center;
