@@ -54,21 +54,29 @@ let newPro ={
     category: category.value.toLowerCase(),
     count :count.value
 }
-if(mood ==='create'){
-    if(newPro.count >1){
-        for(let i=0; i<newPro.count;i++){
-            datapro.push(newPro);
-    
+if(title.value !=''
+    &&price.value!=''
+    &&category.value!=''
+    &&count.value<100
+){
+    if(mood ==='create'){
+        if(newPro.count >1){
+            for(let i=0; i<newPro.count;i++){
+                datapro.push(newPro);
+        
+            }
+        }else{
+            datapro.push(newPro)
         }
     }else{
-        datapro.push(newPro)
+        datapro[tmp]=newPro;
+        mood="create";
+        count.style.display='block';
+        submit.innerHTML='create'
     }
-}else{
-    datapro[tmp]=newPro;
-    mood="create";
-    count.style.display='block';
-    submit.innerHTML='create'
+    clearData()
 }
+
 
 
 
@@ -76,7 +84,7 @@ if(mood ==='create'){
 
 localStorage.setItem('product',JSON.stringify(datapro));
 
-clearData()
+
 readData()
 
 
